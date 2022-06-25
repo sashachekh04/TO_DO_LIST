@@ -26,4 +26,9 @@ export class TaskDataService {
     }
     this.tasks$.next([...this.tasks$.value, newTask])
   }
+
+  public deleteTask(id: number): void {
+    const arr = this.tasks$.value.filter(item => item.id !== id)
+    this.tasks$.next(arr)
+  }
 }
