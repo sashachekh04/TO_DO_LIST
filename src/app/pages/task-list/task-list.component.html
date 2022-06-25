@@ -1,0 +1,8 @@
+<div class="task-wrapper">
+  <div
+    *ngFor="let t of taskList$ | async"
+    class="task">
+    <div class="task-text">{{t.text}}</div>
+    <div class="task-priority">priority: {{t.priority}}</div>
+  </div>
+</div>

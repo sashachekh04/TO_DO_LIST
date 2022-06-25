@@ -1,0 +1,16 @@
+.task-wrapper{
+  margin-top: 15px;
+  .task {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 400px;
+    margin: auto;
+    border-radius: 5px;
+    height: 30px;
+    padding: 0 5px;
+    transform: translateX(-12%);
+    margin-bottom: 10px;
+    box-shadow: 1px 0 5px 1px rgba(0,0,0,0.45);
+  }
+}

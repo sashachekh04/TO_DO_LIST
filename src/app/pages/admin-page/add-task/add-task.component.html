@@ -1,0 +1,17 @@
+<form
+  [formGroup]="addTaskForm"
+  (ngSubmit)="addTask()"
+  class="form"
+  action="">
+  <div class="content-wrapper">
+    <input
+      formControlName="task"
+      type="text">
+    <button
+      type="submit"
+      class="btn btn-primary">Add Task</button>
+  </div>
+  <div
+    *ngIf="addTaskForm.get('task')!.errors && addTaskForm.touched"
+    class="error">Area can`t be empty</div>
+</form>
