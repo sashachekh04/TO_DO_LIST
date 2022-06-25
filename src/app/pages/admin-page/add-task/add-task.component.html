@@ -5,14 +5,23 @@
   action="">
   <div class="content-wrapper">
     <input
+      placeholder="Put task text"
       formControlName="task"
       type="text">
-<!--    <ng-select></ng-select>-->
+    <div
+      *ngIf="addTaskForm.get('task')!.errors && addTaskForm.touched"
+      class="error">Area can`t be empty</div>
+    <ng-select
+      formControlName="priority"
+      [items]="priority"
+      [searchable]="false"
+      placeholder="Choose priority"
+    ></ng-select>
+    <div
+      *ngIf="addTaskForm.get('priority')!.errors && addTaskForm.touched"
+      class="error">Please, select priority!</div>
     <button
       type="submit"
       class="btn btn-primary">Add Task</button>
   </div>
-  <div
-    *ngIf="addTaskForm.get('task')!.errors && addTaskForm.touched"
-    class="error">Area can`t be empty</div>
 </form>

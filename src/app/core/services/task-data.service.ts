@@ -17,14 +17,13 @@ export class TaskDataService {
   public get data(): Subject<Task[]> {
     return this.tasks$
   }
-  // public addTask(text: string): void {
-  //   const arr = this.tasks$.getValue();
-  //   arr.push({
-  //     text,
-  //     id: this.tasks$.getValue().length + 1,
-  //     isCompleted: false
-  //   })
-  //   this.tasks$.next(arr)
-  //   console.log(this.tasks$.getValue())
-  // }
+  public addTask(text: string, priority: number): void {
+    const newTask = {
+      text,
+        id: this.tasks$.getValue().length + 1,
+      isCompleted: false,
+      priority
+    }
+    this.tasks$.next([...this.tasks$.value, newTask])
+  }
 }

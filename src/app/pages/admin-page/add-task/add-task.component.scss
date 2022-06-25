@@ -5,11 +5,29 @@
 }
 .content-wrapper {
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  align-items: flex-start;
   justify-content: space-between;
 }
 input {
   width: 400px;
   height: 38px;
   border-radius: 5px;
+  padding: 0 5px;
+}
+.error {
+  font-weight: 700;
+  color: red;
+}
+button {
+  margin-top: 10px;
+}
+:host::ng-deep {
+  ng-select{
+    margin: 10px 0;
+    width: 400px;
+    .ng-clear-wrapper {
+      display: none;
+    }
+  }
 }
