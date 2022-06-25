@@ -11,7 +11,8 @@ export class AddTaskComponent implements OnInit {
 
   public taskText: string = '';
   public addTaskForm: FormGroup = this.fb.group({
-    task: ['', Validators.required]
+    task: ['', Validators.required],
+    priority: ['Choose priority', Validators.required]
   })
 
   constructor(private dataService: TaskDataService,

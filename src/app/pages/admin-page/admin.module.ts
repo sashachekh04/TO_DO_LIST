@@ -5,6 +5,7 @@ import { AdminRoutingModule } from './admin-routing.module';
 import { AddTaskComponent } from "./add-task/add-task.component";
 import { ReactiveFormsModule } from "@angular/forms";
 import { TaskListComponent } from "../task-list/task-list.component";
+import { NgSelectModule } from "@ng-select/ng-select";
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { TaskListComponent } from "../task-list/task-list.component";
   imports: [
     CommonModule,
     AdminRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgSelectModule
   ]
 })
 export class AdminModule {
