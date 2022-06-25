@@ -1,5 +1,11 @@
-.task-wrapper{
+.tasks-wrapper{
   margin-top: 15px;
+  .task-text-wrapper {
+    width: 385px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
   .task {
     display: flex;
     justify-content: space-between;
@@ -9,8 +15,24 @@
     border-radius: 5px;
     height: 30px;
     padding: 0 5px;
-    transform: translateX(-12%);
     margin-bottom: 10px;
     box-shadow: 1px 0 5px 1px rgba(0,0,0,0.45);
+  }
+  .task-icons-wrapper {
+    svg {
+      width: 30px;
+      height: 30px;
+      cursor: pointer;
+    }
+    .pencil {
+      margin-left: 10px;
+    }
+  }
+  .task-wrapper {
+    display: flex;
+    align-items: flex-start;
+    width: 500px;
+    margin: auto;
+    transform: translateX(-3%);
   }
 }
