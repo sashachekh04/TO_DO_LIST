@@ -12,6 +12,9 @@ import { TaskListComponent } from "../task-list/task-list.component";
     AddTaskComponent,
     TaskListComponent
   ],
+  exports: [
+    AdminComponent
+  ],
   imports: [
     CommonModule,
     AdminRoutingModule,
