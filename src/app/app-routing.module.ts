@@ -10,6 +10,10 @@ const routes: Routes = [
   {
     path: 'admin',
     loadChildren: () => import('./pages/admin-page/admin.module').then(m => m.AdminModule)
+  },
+  {
+    path: 'client',
+    loadChildren: () => import('./pages/user-page/user-page.module').then(m => m.UserPageModule)
   }
 ];
 

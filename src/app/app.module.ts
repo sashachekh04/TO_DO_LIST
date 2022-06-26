@@ -8,7 +8,6 @@ import { AuthorizationPageComponent } from "./pages/authorization-page/authoriza
   declarations: [
     AppComponent,
     AuthorizationPageComponent
-
   ],
   imports: [
     BrowserModule,

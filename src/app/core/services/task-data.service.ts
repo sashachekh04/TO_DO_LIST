@@ -12,7 +12,7 @@ export class TaskDataService {
   public changeTask!: Task;
 
   constructor() {
-    this.tasks$ = new BehaviorSubject<Task[]>(taskList)
+    this.tasks$ = new BehaviorSubject<Task[]>(this.sortTasks(taskList))
   }
 
   public get data(): Subject<Task[]> {
@@ -25,12 +25,12 @@ export class TaskDataService {
       isCompleted: false,
       priority
     }
-    this.tasks$.next([...this.tasks$.value, newTask])
+    this.tasks$.next(this.sortTasks([...this.tasks$.value, newTask]))
   }
 
   public deleteTask(id: number): void {
     const arr = this.tasks$.value.filter(item => item.id !== id)
-    this.tasks$.next(arr)
+    this.tasks$.next(this.sortTasks(arr))
   }
 
   public setChangedTask(t: Task): void {
@@ -44,6 +44,10 @@ export class TaskDataService {
     changedTask.text = text;
     changedTask.priority = priority;
     const arr = this.tasks$.value.filter(item => item.id != t.id)
-    this.tasks$.next([...arr, changedTask])
+    this.tasks$.next(this.sortTasks([...arr, changedTask]))
+  }
+
+  private sortTasks(arr : Task[]): Task[] {
+    return arr.sort((a,b) => b.priority - a.priority)
   }
 }
