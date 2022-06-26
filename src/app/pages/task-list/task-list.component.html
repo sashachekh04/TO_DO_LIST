@@ -1,10 +1,20 @@
 <div class="task-list-wrapper">
-  <div class="tasks-filters">
-    <h3>Filters: </h3>
-    <h5>By priority:</h5>
-    <div>Low to high</div>
-    <div>High to low</div>
-  </div>
+<!--  <div class="tasks-filters">-->
+<!--    <h3>Filters: </h3>-->
+<!--    <h5>By priority:</h5>-->
+<!--    <div class="filter-block">-->
+<!--      <div>Low to high</div>-->
+<!--      <input-->
+<!--        [checked]="true"-->
+<!--        type="checkbox">-->
+<!--    </div>-->
+<!--    <div class="filter-block">-->
+<!--      <div>High to low</div>-->
+<!--      <input-->
+<!--        [checked]="true"-->
+<!--        type="checkbox">-->
+<!--    </div>-->
+<!--  </div>-->
   <div class="tasks-wrapper">
     <div
       *ngFor="let t of taskList$ | async"
