@@ -7,7 +7,10 @@ import { CommonModule } from "@angular/common";
 @NgModule({
   declarations: [TaskListComponent],
   exports: [TaskListComponent],
-  imports: [RouterModule, CommonModule]
+  imports: [
+    RouterModule,
+    CommonModule
+  ]
 })
 
 export class TaskListModule {
