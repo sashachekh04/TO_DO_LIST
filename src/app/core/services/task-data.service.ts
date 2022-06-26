@@ -21,8 +21,7 @@ export class TaskDataService {
   public addTask(text: string, priority: number): void {
     const newTask = {
       text,
-        id: this.tasks$.getValue().length + 1,
-      isCompleted: false,
+      id: this.tasks$.getValue().length + 1,
       priority
     }
     this.tasks$.next(this.sortTasks([...this.tasks$.value, newTask]))
