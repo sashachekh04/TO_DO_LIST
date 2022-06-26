@@ -9,6 +9,7 @@ import { taskList } from "../taskData";
 export class TaskDataService {
 
   public tasks$!: BehaviorSubject<Task[]>
+  public changeTask!: Task;
 
   constructor() {
     this.tasks$ = new BehaviorSubject<Task[]>(taskList)
@@ -30,5 +31,19 @@ export class TaskDataService {
   public deleteTask(id: number): void {
     const arr = this.tasks$.value.filter(item => item.id !== id)
     this.tasks$.next(arr)
+  }
+
+  public setChangedTask(t: Task): void {
+    this.changeTask = t;
+  }
+  public get taskForChange(): Task {
+    return this.changeTask
+  }
+  public saveChangedTask(t: Task, text: string, priority: number): void {
+    const changedTask = t;
+    changedTask.text = text;
+    changedTask.priority = priority;
+    const arr = this.tasks$.value.filter(item => item.id != t.id)
+    this.tasks$.next([...arr, changedTask])
   }
 }
