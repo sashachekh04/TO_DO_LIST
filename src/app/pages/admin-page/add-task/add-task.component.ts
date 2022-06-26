@@ -9,7 +9,6 @@ import { TaskDataService } from "../../../core/services/task-data.service";
 })
 export class AddTaskComponent implements OnInit {
 
-  public taskText: string = '';
   public priority!: Array<number>;
   public addTaskForm: UntypedFormGroup = this.fb.group({
     task: ['', Validators.required],
