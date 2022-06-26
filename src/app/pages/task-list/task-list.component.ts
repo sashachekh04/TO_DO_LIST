@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { TaskDataService } from "../../core/services/task-data.service";
 import { Observable } from "rxjs";
 import { Task } from "../../core/model/model";
@@ -10,15 +10,21 @@ import { Task } from "../../core/model/model";
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class TaskListComponent implements OnInit {
+
   public taskList$!: Observable<Task[]>
+  public taskListLength!: number;
 
   constructor(private taskService: TaskDataService) {
     this.taskList$ = this.taskService.data.asObservable()
+    this.taskList$.subscribe(el => this.taskListLength = el.length)
   }
 
   ngOnInit(): void {
   }
   public onDeleteTask(id: number): void {
-    this.taskService.deleteTask(id)
+    this.taskService.deleteTask(id);
+  }
+  public onChangeTask(t: Task): void {
+    this.taskService.setChangedTask(t);
   }
 }
