@@ -1,21 +1,28 @@
-<div class="tasks-wrapper">
-  <div
-    *ngFor="let t of taskList$ | async"
-    class="task-wrapper">
+<div class="task-list-wrapper">
+  <div class="tasks-filters">
+    <h3>Filters: </h3>
+    <h5>By priority:</h5>
+    <div>Low to high</div>
+    <div>High to low</div>
+  </div>
+  <div class="tasks-wrapper">
     <div
-      [routerLink]="['task', t.id]"
-      (click)="onChangeTask(t)"
-      class="task">
-      <div class="task-text">{{t.text}}</div>
-      <div class="task-priority">priority: {{t.priority}}</div>
-    </div>
-    <div class="task-icons-wrapper">
-      <svg
-        class="delete"
-        xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 448 512"
-        (click)="onDeleteTask(t.id)">
-        <path d="M160 400C160 408.8 152.8 416 144 416C135.2 416 128 408.8 128 400V192C128
+      *ngFor="let t of taskList$ | async"
+      class="task-wrapper">
+      <div
+        [routerLink]="['task', t.id]"
+        (click)="onChangeTask(t)"
+        class="task">
+        <div class="task-text">{{t.text}}</div>
+        <div class="task-priority">priority: {{t.priority}}</div>
+      </div>
+      <div class="task-icons-wrapper">
+        <svg
+          class="delete"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 448 512"
+          (click)="onDeleteTask(t.id)">
+          <path d="M160 400C160 408.8 152.8 416 144 416C135.2 416 128 408.8 128 400V192C128
        183.2 135.2 176 144 176C152.8 176 160 183.2 160 192V400zM240 400C240 408.8 232.8
         416 224 416C215.2 416 208 408.8 208 400V192C208 183.2 215.2 176 224 176C232.8 176
          240 183.2 240 192V400zM320 400C320 408.8 312.8 416 304 416C295.2 416 288 408.8
@@ -26,25 +33,28 @@
              9.358 317.5 24.94H317.5zM151.5 80H296.5L277.5 51.56C276 49.34 273.5 48 270.9 48H177.1C174.5
               48 171.1 49.34 170.5 51.56L151.5 80zM80 432C80 449.7 94.33 464 112 464H336C353.7
                464 368 449.7 368 432V128H80V432z"/>
-      </svg>
-      <svg
-        [routerLink]="['task', t.id]"
-        (click)="onChangeTask(t)"
-        class="pencil"
-        xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 512 512">
-        <path d="M421.7 220.3L188.5 453.4L154.6 419.5L158.1 416H112C103.2 416 96 408.8
+        </svg>
+        <svg
+          [routerLink]="['task', t.id]"
+          (click)="onChangeTask(t)"
+          class="pencil"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 512 512">
+          <path d="M421.7 220.3L188.5 453.4L154.6 419.5L158.1 416H112C103.2 416 96 408.8
        96 400V353.9L92.51 357.4C87.78 362.2 84.31 368 82.42 374.4L59.44 452.6L137.6
         429.6C143.1 427.7 149.8 424.2 154.6 419.5L188.5 453.4C178.1 463.8 165.2 471.5
          151.1 475.6L30.77 511C22.35 513.5 13.24 511.2 7.03 504.1C.8198 498.8-1.502 489.7
           .976 481.2L36.37 360.9C40.53 346.8 48.16 333.9 58.57 323.5L291.7 90.34L421.7
            220.3zM492.7 58.75C517.7 83.74 517.7 124.3 492.7 149.3L444.3 197.7L314.3 67.72L362.7
             19.32C387.7-5.678 428.3-5.678 453.3 19.32L492.7 58.75z"/>
-      </svg>
+        </svg>
+      </div>
+    </div>
+    <div
+      *ngIf="!taskListLength"
+      class="empty-list"
+    >It is nothing to do!
     </div>
   </div>
-  <div
-    *ngIf="!taskListLength"
-    class="empty-list"
-  >It is nothing to do! </div>
 </div>
+

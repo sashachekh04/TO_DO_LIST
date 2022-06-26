@@ -1,49 +1,64 @@
-.tasks-wrapper{
-  margin-top: 15px;
-  .task-text-wrapper {
-    width: 385px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-  .task {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 400px;
-    margin: auto;
-    border-radius: 5px;
-    height: 30px;
-    padding: 0 5px;
-    margin-bottom: 10px;
-    box-shadow: 1px 0 5px 1px rgba(0,0,0,0.45);
-    cursor: pointer;
-    &:hover {
-      opacity: 0.8;
+.task-list-wrapper {
+  display: flex;
+  align-items: flex-start;
+  .tasks-wrapper{
+    margin-top: 15px;
+    transform: translateX(42%);
+    .task-text-wrapper {
+      width: 385px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
     }
-  }
-  .task-icons-wrapper {
-    svg {
-      width: 30px;
+    .task {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 400px;
+      margin: auto;
+      border-radius: 5px;
       height: 30px;
+      padding: 0 5px;
+      margin-bottom: 10px;
+      box-shadow: 1px 0 5px 1px rgba(0,0,0,0.45);
       cursor: pointer;
+      &:hover {
+        opacity: 0.8;
+      }
     }
-    .pencil {
-      margin-left: 10px;
+    .task-icons-wrapper {
+      svg {
+        width: 30px;
+        height: 30px;
+        cursor: pointer;
+      }
+      .pencil {
+        margin-left: 10px;
+      }
+    }
+    .task-wrapper {
+      display: flex;
+      align-items: flex-start;
+      width: 500px;
+      margin: auto;
+      transform: translateX(-3%);
+    }
+    .empty-list {
+      margin: auto;
+      width: 215px;
+      color: red;
+      font-weight: 700;
+      font-size: 20px;
     }
   }
-  .task-wrapper {
-    display: flex;
-    align-items: flex-start;
-    width: 500px;
-    margin: auto;
-    transform: translateX(-3%);
-  }
-  .empty-list {
-    margin: auto;
-    width: 215px;
-    color: red;
-    font-weight: 700;
-    font-size: 20px;
+  .tasks-filters {
+    div {
+      font-size: 18px;
+      cursor: pointer;
+      &:hover {
+        transform: translateY(-5%);
+        transition: 0.3s all;
+      }
+    }
   }
 }
