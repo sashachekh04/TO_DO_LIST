@@ -28,6 +28,7 @@
       </div>
       <div class="task-icons-wrapper">
         <svg
+          *ngIf="isAdminList"
           class="delete"
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 448 512"
@@ -45,6 +46,7 @@
                464 368 449.7 368 432V128H80V432z"/>
         </svg>
         <svg
+          *ngIf="isAdminList"
           [routerLink]="['task', t.id]"
           (click)="onChangeTask(t)"
           class="pencil"

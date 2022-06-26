@@ -1,7 +1,7 @@
-import { ChangeDetectionStrategy, Component, EventEmitter, OnInit, Output } from '@angular/core';
-import { TaskDataService } from "../../core/services/task-data.service";
+import { ChangeDetectionStrategy, Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { TaskDataService } from "../../../core/services/task-data.service";
 import { Observable } from "rxjs";
-import { Task } from "../../core/model/model";
+import { Task } from "../../../core/model/model";
 
 @Component({
   selector: 'app-task-list',
@@ -10,6 +10,7 @@ import { Task } from "../../core/model/model";
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class TaskListComponent implements OnInit {
+  @Input() isAdminList: boolean = true;
 
   public taskList$!: Observable<Task[]>
   public taskListLength!: number;
