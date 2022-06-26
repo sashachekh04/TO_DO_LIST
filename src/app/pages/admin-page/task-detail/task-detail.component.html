@@ -1,0 +1,30 @@
+<div class="container">
+<div class="task-detail">
+  <form
+    [formGroup]="taskDetailForm"
+    action=""
+    class="task-detail-form">
+    <input
+      formControlName="task"
+      type="text">
+    <ng-select
+      formControlName="priority"
+      [items]="priority"
+      [bindLabel]="task.priority"
+      [searchable]="false"
+      placeholder="Choose priority"
+    ></ng-select>
+  </form>
+  <div class="buttons-wrapper">
+    <button
+      type="button"
+      routerLink="/admin"
+      class="btn btn-primary">Cancel</button>
+    <button
+      type="button"
+      routerLink="/admin"
+      class="btn btn-primary"
+      (click)="saveTask()">Save</button>
+  </div>
+</div>
+</div>

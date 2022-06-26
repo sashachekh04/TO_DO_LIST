@@ -2,7 +2,10 @@
   <div
     *ngFor="let t of taskList$ | async"
     class="task-wrapper">
-    <div class="task">
+    <div
+      [routerLink]="['task', t.id]"
+      (click)="onChangeTask(t)"
+      class="task">
       <div class="task-text">{{t.text}}</div>
       <div class="task-priority">priority: {{t.priority}}</div>
     </div>
@@ -25,6 +28,8 @@
                464 368 449.7 368 432V128H80V432z"/>
       </svg>
       <svg
+        [routerLink]="['task', t.id]"
+        (click)="onChangeTask(t)"
         class="pencil"
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 512 512">
@@ -37,5 +42,9 @@
             19.32C387.7-5.678 428.3-5.678 453.3 19.32L492.7 58.75z"/>
       </svg>
     </div>
+    <div
+      *ngIf="!taskListLength"
+    class="empty-list"
+    >It is nothing to do </div>
   </div>
 </div>

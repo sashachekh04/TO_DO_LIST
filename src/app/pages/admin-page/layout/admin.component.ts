@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Task } from "../../../core/model/model";
 
 @Component({
   selector: 'app-admin-component',
@@ -6,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./admin.component.scss']
 })
 export class AdminComponent implements OnInit {
+
   constructor() {
   }
 

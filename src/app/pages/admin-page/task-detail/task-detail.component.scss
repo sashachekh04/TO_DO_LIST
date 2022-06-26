@@ -1,0 +1,34 @@
+.container{
+  margin: auto;
+  .task-detail {
+    width: 500px;
+    margin: auto;
+    padding-top: 20px;
+    input {
+      width: 400px;
+      height: 38px;
+      border-radius: 5px;
+      padding: 0 5px;
+    }
+    .buttons-wrapper {
+      display: flex;
+      justify-content: space-between;
+      width: 220px;
+      margin-top: 15px;
+      button {
+        width: 90px;
+      }
+    }
+  }
+}
+
+:host::ng-deep {
+  ng-select{
+    margin: 10px 0;
+    width: 400px;
+    .ng-clear-wrapper {
+      display: none;
+    }
+  }
+}
+
