@@ -20,8 +20,15 @@
       *ngFor="let t of taskList$ | async"
       class="task-wrapper">
       <div
+        *ngIf="isAdminList"
         [routerLink]="['task', t.id]"
         (click)="onChangeTask(t)"
+        class="task">
+        <div class="task-text">{{t.text}}</div>
+        <div class="task-priority">priority: {{t.priority}}</div>
+      </div>
+      <div
+        *ngIf="!isAdminList"
         class="task">
         <div class="task-text">{{t.text}}</div>
         <div class="task-priority">priority: {{t.priority}}</div>
